@@ -205,3 +205,36 @@ body {
   vertical-align: middle;
   margin-right: 8px;
 }
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.circle-icon,
+.square-icon {
+  background-color: white;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-icon {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.square-icon {
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.circle-icon img,
+.square-icon img {
+  width: 20px;
+  height: 20px;
+}
