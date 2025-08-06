@@ -58,8 +58,8 @@ body {
 
 .circle-icon img,
 .square-icon img {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   filter: invert(1); /* iconos blancos */
 }
 
