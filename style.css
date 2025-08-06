@@ -13,7 +13,7 @@ body {
 /* ==== BARRA LATERAL IZQUIERDA ==== */
 .sidebar {
   width: 260px;
-  background-color: #111827; /* Mantiene el fondo oscuro */
+  background-color: #111827;
   color: white;
   text-align: center;
   padding: 20px;
@@ -37,14 +37,11 @@ body {
   margin: 10px 0;
 }
 
-.social a {
-  margin: 0 10px;
-}
-
-.social .icon {
+.sidebar-icon {
   width: 24px;
   height: 24px;
   filter: invert(1); /* Blanco */
+  margin: 0 5px;
 }
 
 /* ==== NAVEGACIÓN ==== */
@@ -80,11 +77,11 @@ body {
   flex: 1;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: #ffffff; /* Fondo blanco para todas las secciones */
+  background-color: #ffffff;
   color: #111;
 }
 
-/* ==== SECCIONES GENERALES ==== */
+/* ==== SECCIONES ==== */
 .section {
   min-height: 100vh;
   padding: 60px;
@@ -96,7 +93,7 @@ body {
   font-size: 32px;
 }
 
-/* ==== SECCIÓN HOME ==== */
+/* ==== HOME ==== */
 .home-section {
   background-image: url('shanghai.jpg');
   background-size: cover;
@@ -131,84 +128,4 @@ body {
   margin-top: 14px;
   animation: fadeInUp 2s ease-out;
   font-weight: 300;
-  color: #cce7ff;
-}
-
-/* ==== ANIMACIONES ==== */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInBackground {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ==== ABOUT (centrado total) ==== */
-.about-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: white;
-}
-
-.about-container {
-  max-width: 800px;
-  text-align: center;
-  line-height: 1.8;
-  font-size: 17px;
-  color: #111;
-}
-
-/* ==== CONTACT ==== */
-.contact-buttons {
-  background-color: white;
-  color: #111;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 16px 0;
-  font-size: 16px;
-}
-
-.contact-item a {
-  color: #3498db;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-
-.contact-item .material-symbols-outlined {
-  font-size: 22px;
-}
-
-/* ==== ICONOS SVG EN CONTACT ==== */
-.contact-icon {
-  width: 22px;
-  height: 22px;
-  margin-top: 2px;
-}
-
-/* Icono GitHub en negro */
-.github-icon {
-  filter: brightness(0);
-}
-
-/* Icono LinkedIn en azul original */
-.linkedin-icon {
-  filter: none;
-}
+  color: #cce
