@@ -176,3 +176,42 @@ body {
   width: 24px;
   height: 24px;
 }
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.about-container {
+  max-width: 800px;
+  margin-top: 20px;
+  line-height: 1.8;
+  font-size: 17px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-item span,
+.contact-item img {
+  color: white;
+  filter: invert(1);
+}
+
+.contact-item .material-symbols-outlined {
+  font-size: 22px;
+}
+
+.contact-item a {
+  font-weight: 500;
+  font-size: 16px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
