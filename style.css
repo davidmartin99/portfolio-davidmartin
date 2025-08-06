@@ -1,16 +1,19 @@
+/* ==== RESET GENERAL ==== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* ==== ESTRUCTURA GENERAL ==== */
 .container {
   display: flex;
   height: 100vh;
 }
 
+/* ==== BARRA LATERAL IZQUIERDA ==== */
 .sidebar {
   width: 260px;
-  background-color: #111827;
+  background-color: #111827; /* Mantiene el fondo oscuro */
   color: white;
   text-align: center;
   padding: 20px;
@@ -29,6 +32,7 @@ body {
   margin: 15px 0;
 }
 
+/* Iconos barra lateral */
 .social {
   margin: 10px 0;
 }
@@ -40,17 +44,10 @@ body {
 .social .icon {
   width: 24px;
   height: 24px;
-  filter: invert(1); /* iconos blancos en barra */
+  filter: invert(1); /* Blanco */
 }
 
-.white-icon {
-  filter: invert(1); /* fuerza blanco */
-}
-
-.linkedin-icon {
-  filter: none; /* color original solo si lo usas en otra parte */
-}
-
+/* ==== NAVEGACIÓN ==== */
 .nav {
   margin-top: 30px;
 }
@@ -78,14 +75,16 @@ body {
     'opsz' 24;
 }
 
+/* ==== CONTENIDO PRINCIPAL ==== */
 .content {
   flex: 1;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: #ffffff; /* fondo blanco para secciones */
+  background-color: #ffffff; /* Fondo blanco para todas las secciones */
   color: #111;
 }
 
+/* ==== SECCIONES GENERALES ==== */
 .section {
   min-height: 100vh;
   padding: 60px;
@@ -97,7 +96,7 @@ body {
   font-size: 32px;
 }
 
-/* PORTADA (home) */
+/* ==== SECCIÓN HOME ==== */
 .home-section {
   background-image: url('shanghai.jpg');
   background-size: cover;
@@ -135,7 +134,7 @@ body {
   color: #cce7ff;
 }
 
-/* ANIMACIONES */
+/* ==== ANIMACIONES ==== */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -152,7 +151,7 @@ body {
   to { opacity: 1; }
 }
 
-/* ABOUT - centrado total */
+/* ==== ABOUT (centrado total) ==== */
 .about-section {
   display: flex;
   justify-content: center;
@@ -169,8 +168,9 @@ body {
   color: #111;
 }
 
-/* CONTACT */
+/* ==== CONTACT ==== */
 .contact-buttons {
+  background-color: white;
   color: #111;
 }
 
@@ -194,4 +194,21 @@ body {
 
 .contact-item .material-symbols-outlined {
   font-size: 22px;
+}
+
+/* ==== ICONOS SVG EN CONTACT ==== */
+.contact-icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+/* Icono GitHub en negro */
+.github-icon {
+  filter: brightness(0);
+}
+
+/* Icono LinkedIn en azul original */
+.linkedin-icon {
+  filter: none;
 }
