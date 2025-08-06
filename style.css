@@ -35,22 +35,21 @@ body {
 
 .social a {
   margin: 0 10px;
-  color: white;
   font-size: 24px;
 }
 
 .social .icon {
   width: 24px;
   height: 24px;
-  filter: invert(1); /* Blanco */
+  filter: invert(1); /* blanco */
 }
 
 .white-icon {
-  filter: invert(1); /* Fuerza el blanco en barra izquierda */
+  filter: invert(1); /* blanco en barra lateral */
 }
 
 .linkedin-icon {
-  filter: none; /* Color original azul LinkedIn */
+  filter: none; /* color azul original de LinkedIn */
 }
 
 .nav {
@@ -84,6 +83,8 @@ body {
   flex: 1;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background-color: #0f172a; /* Fondo oscuro para que about se vea */
+  color: white;
 }
 
 .section {
@@ -107,111 +108,4 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  animation: fadeInBackground 2s ease-in-out;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.55);
-  padding: 50px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  animation: fadeInUp 1.5s ease-out;
-}
-
-.home-title {
-  font-size: 60px;
-  margin: 0;
-  animation: fadeInUp 1s ease-out;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.home-subtitle {
-  font-size: 26px;
-  margin-top: 14px;
-  animation: fadeInUp 2s ease-out;
-  font-weight: 300;
-  color: #cce7ff;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInBackground {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.contact-buttons {
-  color: white;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 16px 0;
-  font-size: 16px;
-}
-
-.contact-item a {
-  color: #3498db;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-
-.contact-item .icon {
-  width: 24px;
-  height: 24px;
-}
-.about-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
-
-.about-container {
-  max-width: 800px;
-  margin-top: 20px;
-  line-height: 1.8;
-  font-size: 17px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.contact-item span,
-.contact-item img {
-  color: white;
-  filter: invert(1);
-}
-
-.contact-item .material-symbols-outlined {
-  font-size: 22px;
-}
-
-.contact-item a {
-  font-weight: 500;
-  font-size: 16px;
-  color: #3498db;
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
+  animation: fadeInBackground 2s ease
