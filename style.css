@@ -1,16 +1,13 @@
-/* ==== RESET GENERAL ==== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* ==== ESTRUCTURA GENERAL ==== */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* ==== BARRA LATERAL ==== */
 .sidebar {
   width: 260px;
   background-color: #111827;
@@ -32,22 +29,28 @@ body {
   margin: 15px 0;
 }
 
-.social-box {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+.social {
+  margin: 10px 0;
 }
 
-.sidebar-social-icon {
+.social a {
+  margin: 0 10px;
+}
+
+.social .icon {
   width: 24px;
   height: 24px;
+  filter: invert(1); /* iconos blancos en barra */
 }
 
-/* ==== NAV ==== */
+.white-icon {
+  filter: invert(1); /* fuerza blanco */
+}
+
+.linkedin-icon {
+  filter: none; /* color original solo si lo usas en otra parte */
+}
+
 .nav {
   margin-top: 30px;
 }
@@ -75,16 +78,14 @@ body {
     'opsz' 24;
 }
 
-/* ==== CONTENIDO ==== */
 .content {
   flex: 1;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: #ffffff;
+  background-color: #ffffff; /* fondo blanco para secciones */
   color: #111;
 }
 
-/* ==== SECCIONES ==== */
 .section {
   min-height: 100vh;
   padding: 60px;
@@ -96,7 +97,7 @@ body {
   font-size: 32px;
 }
 
-/* ==== HOME ==== */
+/* PORTADA (home) */
 .home-section {
   background-image: url('shanghai.jpg');
   background-size: cover;
@@ -134,6 +135,7 @@ body {
   color: #cce7ff;
 }
 
+/* ANIMACIONES */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -150,7 +152,7 @@ body {
   to { opacity: 1; }
 }
 
-/* ==== ABOUT ==== */
+/* ABOUT - centrado total */
 .about-section {
   display: flex;
   justify-content: center;
@@ -167,21 +169,9 @@ body {
   color: #111;
 }
 
-/* ==== CONTACT ==== */
-.contact-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
-
-.contact-container {
-  background-color: white;
-  border: 1.5px solid black;
-  border-radius: 12px;
-  padding: 30px 40px;
-  max-width: 500px;
-  width: 100%;
+/* CONTACT */
+.contact-buttons {
+  color: #111;
 }
 
 .contact-item {
@@ -202,7 +192,6 @@ body {
   text-decoration: underline;
 }
 
-.contact-icon {
-  width: 22px;
-  height: 22px;
+.contact-item .material-symbols-outlined {
+  font-size: 22px;
 }
