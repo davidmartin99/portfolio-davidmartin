@@ -235,3 +235,7 @@ body {
   vertical-align: middle;
   margin-right: 8px;
 }
+
+.contact-icon.white-icon {
+  filter: invert(1);
+}
