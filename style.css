@@ -26,23 +26,46 @@ body {
 
 .sidebar h1 {
   font-size: 20px;
-  margin: 15px 0;
+  margin: 15px 0 5px;
 }
 
-.icon-box {
-  background-color: white;
-  border-radius: 12px;
-  padding: 10px;
-  margin-top: 12px;
+.icon-container {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin: 10px 0 20px;
 }
 
-.icon-box img {
-  width: 20px;
-  height: 20px;
-  filter: invert(1); /* iconos blancos sobre fondo oscuro */
+.circle-icon,
+.square-icon {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  transition: transform 0.3s;
+}
+
+.circle-icon {
+  border-radius: 50%;
+}
+
+.square-icon {
+  border-radius: 6px;
+}
+
+.circle-icon img,
+.square-icon img {
+  width: 14px;
+  height: 14px;
+  filter: invert(1); /* iconos blancos */
+}
+
+.circle-icon:hover,
+.square-icon:hover {
+  transform: scale(1.1);
 }
 
 .nav {
@@ -142,8 +165,12 @@ body {
 }
 
 @keyframes fadeInBackground {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ABOUT */
@@ -204,37 +231,4 @@ body {
   height: 18px;
   vertical-align: middle;
   margin-right: 8px;
-}
-.icon-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.circle-icon,
-.square-icon {
-  background-color: white;
-  padding: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circle-icon {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-}
-
-.square-icon {
-  border-radius: 6px;
-  width: 36px;
-  height: 36px;
-}
-
-.circle-icon img,
-.square-icon img {
-  width: 20px;
-  height: 20px;
 }
