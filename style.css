@@ -35,21 +35,20 @@ body {
 
 .social a {
   margin: 0 10px;
-  font-size: 24px;
 }
 
 .social .icon {
   width: 24px;
   height: 24px;
-  filter: invert(1); /* blanco */
+  filter: invert(1); /* iconos blancos en barra */
 }
 
 .white-icon {
-  filter: invert(1); /* blanco en barra lateral */
+  filter: invert(1); /* fuerza blanco */
 }
 
 .linkedin-icon {
-  filter: none; /* color azul original de LinkedIn */
+  filter: none; /* color original solo si lo usas en otra parte */
 }
 
 .nav {
@@ -83,8 +82,8 @@ body {
   flex: 1;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: #0f172a; /* Fondo oscuro para que about se vea */
-  color: white;
+  background-color: #ffffff; /* fondo blanco para secciones */
+  color: #111;
 }
 
 .section {
@@ -98,6 +97,7 @@ body {
   font-size: 32px;
 }
 
+/* PORTADA (home) */
 .home-section {
   background-image: url('shanghai.jpg');
   background-size: cover;
@@ -108,4 +108,90 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  animation: fadeInBackground 2s ease
+  animation: fadeInBackground 2s ease-in-out;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 50px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.home-title {
+  font-size: 60px;
+  margin: 0;
+  animation: fadeInUp 1s ease-out;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.home-subtitle {
+  font-size: 26px;
+  margin-top: 14px;
+  animation: fadeInUp 2s ease-out;
+  font-weight: 300;
+  color: #cce7ff;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ABOUT - centrado total */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.about-container {
+  max-width: 800px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 17px;
+  color: #111;
+}
+
+/* CONTACT */
+.contact-buttons {
+  color: #111;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.contact-item a {
+  color: #3498db;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-item .material-symbols-outlined {
+  font-size: 22px;
+}
