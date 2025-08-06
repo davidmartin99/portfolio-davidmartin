@@ -187,6 +187,7 @@ body {
 
 .about-container {
   max-width: 800px;
+  margin: 0 auto;
   text-align: center;
   line-height: 1.8;
   font-size: 17px;
