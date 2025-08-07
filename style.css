@@ -305,3 +305,50 @@ body {
   list-style: disc;
 }
 
+.experience-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  margin-bottom: 50px;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.experience-item h3 {
+  font-size: 20px;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.experience-company {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.experience-date {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.experience-item ul {
+  padding-left: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.experience-item ul li {
+  list-style: disc;
+  margin-bottom: 8px;
+}
+
+.experience-summary {
+  margin-top: 15px;
+  font-style: italic;
+  color: #444;
+}
