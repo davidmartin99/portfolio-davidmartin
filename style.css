@@ -352,3 +352,69 @@ body {
   font-style: italic;
   color: #444;
 }
+
+
+/*  PANTALLA MOVIL */ 
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .nav a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .section {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .education-block,
+  .experience-item,
+  .education-item,
+  .contact-box {
+    padding: 20px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .home-title {
+    font-size: 36px;
+  }
+
+  .home-subtitle {
+    font-size: 18px;
+  }
+
+  .about-container {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
