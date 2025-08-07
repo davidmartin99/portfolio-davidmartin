@@ -213,15 +213,16 @@
             const mobileMenu = document.getElementById('mobile-menu');
           
             menuToggle.addEventListener('click', () => {
-              mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+              mobileMenu.classList.toggle('active');
             });
           
             // Cierra el menú al hacer clic en un enlace
             document.querySelectorAll('.mobile-menu a').forEach(link => {
               link.addEventListener('click', () => {
-                mobileMenu.style.display = 'none';
+                mobileMenu.classList.remove('active');
               });
             });
           </script>
+
 </body>
 </html>
