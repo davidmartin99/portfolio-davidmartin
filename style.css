@@ -5,7 +5,9 @@ body {
 
 .container {
   display: flex;
-  height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
 
 .sidebar {
