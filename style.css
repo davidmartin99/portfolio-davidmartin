@@ -488,6 +488,24 @@ body {
   font-size: 12px;
 }
 
+/* Portada tipo logo para proyectos */
+.project-cover.brand {
+  background: #a41111; /* rojo marca (ajústalo si quieres) */
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16/9;            /* mantiene formato del carrusel */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.project-cover.brand .logo-img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;            /* no recorta el logo */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .project-card { flex-basis: 86%; }     /* ocupa casi toda la pantalla */
