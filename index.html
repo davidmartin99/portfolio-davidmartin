@@ -317,20 +317,92 @@
     </main>
   </div>
           <script>
+            // ===== Menú móvil =====
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
           
-            menuToggle.addEventListener('click', () => {
+            function closeMenu() {
+              mobileMenu.classList.remove('active');
+              menuToggle?.setAttribute('aria-expanded', 'false');
+            }
+          
+            menuToggle?.addEventListener('click', () => {
+              const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+              menuToggle.setAttribute('aria-expanded', String(!expanded));
               mobileMenu.classList.toggle('active');
+              if (!expanded) {
+                mobileMenu.querySelector('a')?.focus();
+              } else {
+                menuToggle.focus();
+              }
             });
           
-            // Cierra el menú al hacer clic en un enlace
             document.querySelectorAll('.mobile-menu a').forEach(link => {
-              link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-              });
+              link.addEventListener('click', closeMenu);
             });
+          
+            document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+                menuToggle.focus();
+              }
+            });
+          
+            document.addEventListener('click', (e) => {
+              if (
+                mobileMenu.classList.contains('active') &&
+                !mobileMenu.contains(e.target) &&
+                e.target !== menuToggle
+              ) {
+                closeMenu();
+              }
+            });
+          
+            // ===== Carrusel Portfolio: flechas dinámicas =====
+            const scroller = document.getElementById('portfolio-scroller');
+            const prevBtn  = document.querySelector('.scroll-btn.prev');
+            const nextBtn  = document.querySelector('.scroll-btn.next');
+          
+            function updateArrows() {
+              if (!scroller || !prevBtn || !nextBtn) return;
+              const max = scroller.scrollWidth - scroller.clientWidth;
+              const x   = scroller.scrollLeft;
+              const EPS = 2; // margen anti-redondeos
+          
+              if (max <= EPS) { // no hay overflow horizontal
+                prevBtn.hidden = true;
+                nextBtn.hidden = true;
+                return;
+              }
+              prevBtn.hidden = x <= EPS;
+              nextBtn.hidden = x >= max - EPS;
+            }
+          
+            function scrollByCard(dir = 1) {
+              const card = scroller?.querySelector('.project-card');
+              if (!scroller || !card) return;
+              const style  = getComputedStyle(scroller);
+              const gap    = parseInt(style.columnGap || style.gap || 20, 10);
+              const amount = card.getBoundingClientRect().width + gap;
+              scroller.scrollBy({ left: amount * dir, behavior: 'smooth' });
+            }
+          
+            prevBtn?.addEventListener('click', () => scrollByCard(-1));
+            nextBtn?.addEventListener('click', () => scrollByCard(1));
+            scroller?.addEventListener('scroll', updateArrows, { passive: true });
+            window.addEventListener('resize', updateArrows);
+          
+            // Recalcular cuando carguen imágenes del carrusel
+            scroller?.querySelectorAll('img').forEach(img => {
+              if (img.complete) return;
+              img.addEventListener('load', updateArrows);
+              img.addEventListener('error', updateArrows);
+            });
+          
+            // Primera evaluación
+            updateArrows();
           </script>
+
 
 </body>
 </html>
