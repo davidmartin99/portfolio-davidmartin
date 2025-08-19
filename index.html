@@ -11,14 +11,27 @@
   <!-- Menú hamburguesa (solo visible en móvil) -->
   <header class="mobile-header">
     <div class="mobile-header-content">
-      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
-      <span class="mobile-name">David Martín Pulgar</span>
+      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  
+      <div class="mobile-brand">
+        <img src="/portfolio-davidmartin/perfilFoto.jpg" alt="Foto de David" class="mobile-avatar" />
+        <span class="mobile-name">David Martín Pulgar</span>
+      </div>
     </div>
   </header>
   
   <!-- Menú desplegable oculto -->
   <nav class="mobile-menu" id="mobile-menu">
-    <img src="/portfolio-davidmartin/perfilFoto.jpg" alt="Foto de perfil" class="mobile-profile-img" />
+    <!-- Solo iconos sociales -->
+    <div class="mobile-social">
+      <a href="https://github.com/davidmartin99" target="_blank" aria-label="GitHub">
+        <img src="/portfolio-davidmartin/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/david-martin-pulgar/" target="_blank" aria-label="LinkedIn">
+        <img src="/portfolio-davidmartin/linkedin.svg" alt="LinkedIn" />
+      </a>
+    </div>
+  
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -29,6 +42,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
 
   <div class="container">
     <aside class="sidebar">
