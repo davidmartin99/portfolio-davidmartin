@@ -407,6 +407,10 @@ body {
 
   :root { --mh: 56px; } /* altura cabecera móvil */
 
+  /* Offset para anclajes (#about, #education, etc.) */
+  html { scroll-padding-top: calc(var(--mh) + 12px); }
+  .section { scroll-margin-top: calc(var(--mh) + 12px); }
+
   /* ===== Barra superior ===== */
   .mobile-header {
     display: flex !important;
@@ -424,35 +428,36 @@ body {
   /* ===== Menú desplegable ===== */
   .mobile-menu {
     position: fixed;
-    top: calc(var(--mh) + 12px) !important; /* empuja el menú por debajo de la barra */
+    top: calc(var(--mh) + 14px) !important; /* más separación respecto a la barra */
     left: 0; right: 0;
     opacity: 0; pointer-events: none; transform: translateY(-10px);
     transition: opacity .3s ease, transform .3s ease;
     background-color: #1f2937; color: #fff; z-index: 999;
-    padding: 16px 20px;
+    padding: 24px 20px 20px;                /* + padding arriba para bajar el contenido */
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     box-shadow: 0 10px 22px rgba(0,0,0,.25);
+    border-top: 1px solid rgba(255,255,255,.08);
   }
   .mobile-menu.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
-  .mobile-menu ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .mobile-menu ul { list-style: none; padding: 0; margin: 12px 0 0; }
   .mobile-menu li { margin: 12px 0; }
   .mobile-menu a { color: #fff; text-decoration: none; font-size: 18px; }
   .mobile-menu a:hover { text-decoration: underline; }
 
-  /* ===== Iconos sociales (arreglo: icono negro sobre botón blanco) ===== */
+  /* ===== Iconos sociales ===== */
   .mobile-social {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 4px 0 12px;
+    gap: 12px;                  /* un poco más de espacio entre iconos */
+    margin: 16px 0 14px;        /* separa los iconos de la barra */
   }
   .mobile-social a {
     display: inline-flex;
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    background: #ffffff;              /* botón blanco */
+    background: #ffffff;        /* botón blanco */
     align-items: center;
     justify-content: center;
   }
@@ -460,7 +465,7 @@ body {
     width: 18px;
     height: 18px;
     display: block;
-    filter: brightness(0);            /* fuerza el icono a negro (se vea siempre) */
+    filter: brightness(0);      /* icono negro para buen contraste */
     opacity: 0.95;
   }
 
@@ -509,3 +514,4 @@ body {
   .nav a { padding: 8px 12px; font-size: 14px; }
   .contact-item { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
+
