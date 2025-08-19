@@ -424,7 +424,7 @@ body {
   /* ===== Menú desplegable ===== */
   .mobile-menu {
     position: fixed;
-    top: calc(var(--mh) + 8px) !important; /* empuja el menú por debajo de la barra */
+    top: calc(var(--mh) + 12px) !important; /* empuja el menú por debajo de la barra */
     left: 0; right: 0;
     opacity: 0; pointer-events: none; transform: translateY(-10px);
     transition: opacity .3s ease, transform .3s ease;
