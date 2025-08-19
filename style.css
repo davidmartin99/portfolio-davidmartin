@@ -403,96 +403,122 @@ body {
 /**********************************************************
 = = = = = = = = = = =   M Ó V I L  (≤ 768px)   = = = = = = = = = =
 **********************************************************/
-
 @media (max-width: 768px) {
 
-  /* Variables SOLO en móvil */
-  :root { --mh: 56px; } /* altura cabecera móvil */
+  /* Var. de altura para la barra superior */
+  :root { --mh: 56px; }
 
-  /* Cabecera móvil visible y con altura fija */
+  /* ===== Barra superior (hamburguesa + nombre + avatar) ===== */
   .mobile-header {
     display: flex !important;
     height: var(--mh);
+    background: #111827;
+    color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,.18);
   }
-  .mobile-header-content { height: 100%; gap: 12px; padding: 0 16px; }
-  .mobile-header button { font-size: 28px; line-height: 1; padding: 6px 8px; }
-  .mobile-name { font-weight: 600; letter-spacing: .2px; }
+  .mobile-header-content { height: 100%; gap: 12px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; }
+  .mobile-header button { font-size: 28px; line-height: 1; padding: 6px 8px; background: none; border: 0; color: inherit; cursor: pointer; }
 
-  /* Menú móvil: justo debajo de la cabecera */
+  /* >>> Ajuste avatar + nombre (más pequeño y limpio) */
+  .mobile-brand { display: flex; align-items: center; gap: 8px; }
+  .mobile-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .mobile-name { font-size: 15px; font-weight: 600; letter-spacing: .2px; line-height: 1; }
+
+  /* ===== Menú móvil desplegable ===== */
   .mobile-menu {
+    position: fixed;
     top: var(--mh) !important;
     left: 0; right: 0;
+    opacity: 0; pointer-events: none; transform: translateY(-10px);
+    transition: opacity .3s ease, transform .3s ease;
+    background-color: #1f2937; color: #fff; z-index: 999;
+    padding: 16px 20px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     box-shadow: 0 10px 22px rgba(0,0,0,.25);
   }
-  body.menu-open { overflow: hidden; } /* bloquea scroll de fondo al abrir menú */
+  .mobile-menu.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .mobile-menu ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .mobile-menu li { margin: 12px 0; }
+  .mobile-menu a { color: #fff; text-decoration: none; font-size: 18px; }
+  .mobile-menu a:hover { text-decoration: underline; }
 
-  /* Contenido: no quedar oculto por la cabecera */
+  /* >>> Iconos sociales (más pequeños) */
+  .mobile-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 4px 0 12px;
+  }
+  .mobile-social a {
+    display: inline-flex;
+    width: 32px;              /* tamaño del “botón” */
+    height: 32px;
+    border-radius: 8px;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-social img {
+    width: 18px;              /* tamaño del icono */
+    height: 18px;
+    display: block;
+  }
+
+  /* ===== Contenido y secciones a ancho completo ===== */
   .content {
     margin-left: 0 !important;
     width: 100vw !important;
     padding: 16px;
-    padding-top: calc(var(--mh) + 12px);
+    padding-top: calc(var(--mh) + 12px);  /* que no quede bajo la barra */
     box-sizing: border-box;
   }
-
-  /* Secciones y tipografías más legibles en móvil */
   .section {
     min-height: auto;
     padding: 24px 16px;
+    width: 100%;
   }
   .section h2 {
     padding-left: 6px;
     font-size: clamp(22px, 5.6vw, 28px);
     margin-bottom: 20px;
+    text-align: left;
   }
 
-  /* Portada / Home */
+  /* Portada */
   .home-section { min-height: calc(100vh - var(--mh)); }
   .overlay { padding: clamp(20px, 6vw, 36px); margin: 0 12px; border-radius: 12px; }
   .home-title { font-size: clamp(28px, 8vw, 40px); letter-spacing: 1px; }
   .home-subtitle { font-size: clamp(14px, 4.2vw, 18px); margin-top: 8px; }
 
   /* About */
-  .about-container {
-    max-width: 680px;
-    padding: 0 4px;
-    font-size: 16px;
-    line-height: 1.65;
-    text-align: left;
-  }
+  .about-container { max-width: 680px; padding: 0 4px; font-size: 16px; line-height: 1.65; text-align: left; }
 
-  /* Sidebar se oculta en móvil */
-  .sidebar {
-    display: none !important;
-    position: static !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
+  /* Ocultar sidebar en móvil */
+  .sidebar { display: none !important; position: static !important; height: auto !important; overflow: visible !important; }
 
-  /* Carrusel/portfolio */
+  /* Portfolio carrusel */
   .project-card { flex-basis: 88%; }
   .portfolio-wrapper { padding: 0 6px; }
 
-  /* Higiene general en móvil */
+  /* Higiene general */
   html, body { overflow-x: hidden; }
 
-  /* Ajuste de flechas en móvil (más compactas si las hay) */
+  /* Flechas más compactas si aparecen */
   .scroll-btn { width: 32px; height: 32px; }
   .scroll-btn.prev { left: 6px; }
   .scroll-btn.next { right: 6px; }
 
-  /* Navegación secundaria (si la usas dentro del contenido) */
-  .nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-  }
+  /* Navegación secundaria (si aparece dentro del contenido) */
+  .nav { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
   .nav a { padding: 8px 12px; font-size: 14px; }
 
   /* Contacto */
   .contact-item { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
+
