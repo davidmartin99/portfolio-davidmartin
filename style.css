@@ -405,10 +405,9 @@ body {
 **********************************************************/
 @media (max-width: 768px) {
 
-  /* Var. de altura para la barra superior */
-  :root { --mh: 56px; }
+  :root { --mh: 56px; } /* altura cabecera móvil */
 
-  /* ===== Barra superior (hamburguesa + nombre + avatar) ===== */
+  /* ===== Barra superior ===== */
   .mobile-header {
     display: flex !important;
     height: var(--mh);
@@ -418,21 +417,14 @@ body {
   }
   .mobile-header-content { height: 100%; gap: 12px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; }
   .mobile-header button { font-size: 28px; line-height: 1; padding: 6px 8px; background: none; border: 0; color: inherit; cursor: pointer; }
-
-  /* >>> Ajuste avatar + nombre (más pequeño y limpio) */
   .mobile-brand { display: flex; align-items: center; gap: 8px; }
-  .mobile-avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+  .mobile-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
   .mobile-name { font-size: 15px; font-weight: 600; letter-spacing: .2px; line-height: 1; }
 
-  /* ===== Menú móvil desplegable ===== */
+  /* ===== Menú desplegable ===== */
   .mobile-menu {
     position: fixed;
-    top: var(--mh) !important;
+    top: calc(var(--mh) + 8px) !important; /* empuja el menú por debajo de la barra */
     left: 0; right: 0;
     opacity: 0; pointer-events: none; transform: translateY(-10px);
     transition: opacity .3s ease, transform .3s ease;
@@ -448,7 +440,7 @@ body {
   .mobile-menu a { color: #fff; text-decoration: none; font-size: 18px; }
   .mobile-menu a:hover { text-decoration: underline; }
 
-  /* >>> Iconos sociales (más pequeños) */
+  /* ===== Iconos sociales (arreglo: icono negro sobre botón blanco) ===== */
   .mobile-social {
     display: flex;
     justify-content: center;
@@ -457,25 +449,27 @@ body {
   }
   .mobile-social a {
     display: inline-flex;
-    width: 32px;              /* tamaño del “botón” */
+    width: 32px;
     height: 32px;
     border-radius: 8px;
-    background: #fff;
+    background: #ffffff;              /* botón blanco */
     align-items: center;
     justify-content: center;
   }
   .mobile-social img {
-    width: 18px;              /* tamaño del icono */
+    width: 18px;
     height: 18px;
     display: block;
+    filter: brightness(0);            /* fuerza el icono a negro (se vea siempre) */
+    opacity: 0.95;
   }
 
-  /* ===== Contenido y secciones a ancho completo ===== */
+  /* ===== Contenido y secciones ===== */
   .content {
     margin-left: 0 !important;
     width: 100vw !important;
     padding: 16px;
-    padding-top: calc(var(--mh) + 12px);  /* que no quede bajo la barra */
+    padding-top: calc(var(--mh) + 12px);
     box-sizing: border-box;
   }
   .section {
@@ -502,23 +496,16 @@ body {
   /* Ocultar sidebar en móvil */
   .sidebar { display: none !important; position: static !important; height: auto !important; overflow: visible !important; }
 
-  /* Portfolio carrusel */
+  /* Portfolio */
   .project-card { flex-basis: 88%; }
   .portfolio-wrapper { padding: 0 6px; }
 
-  /* Higiene general */
+  /* Varios */
   html, body { overflow-x: hidden; }
-
-  /* Flechas más compactas si aparecen */
   .scroll-btn { width: 32px; height: 32px; }
   .scroll-btn.prev { left: 6px; }
   .scroll-btn.next { right: 6px; }
-
-  /* Navegación secundaria (si aparece dentro del contenido) */
   .nav { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
   .nav a { padding: 8px 12px; font-size: 14px; }
-
-  /* Contacto */
   .contact-item { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
-
