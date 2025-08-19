@@ -10,12 +10,19 @@ body {
   min-height: 100vh;
 }
 
+/* Sidebar fija en escritorio */
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 260px;
+  height: 100vh;
+  overflow-y: auto;
   background-color: #111827;
   color: white;
   text-align: center;
   padding: 20px;
+  z-index: 900;
 }
 
 .profile-img {
@@ -97,9 +104,10 @@ body {
     'opsz' 24;
 }
 
+/* -- Contenido principal (deja hueco a la sidebar fija) -- */
 .content {
-  flex: 1;
-  overflow-y: scroll;
+  margin-left: 260px;     /* espacio para la sidebar fija */
+  overflow-y: auto;       /* en vez de scroll */
   scroll-behavior: smooth;
   background-color: #ffffff;
   color: #111;
@@ -506,6 +514,7 @@ body {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
 }
 
+/*  PANTALLA MOVIL */ 
 /* Responsive */
 @media (max-width: 768px) {
   .project-card { flex-basis: 86%; }     /* ocupa casi toda la pantalla */
@@ -513,8 +522,6 @@ body {
   .portfolio-wrapper { padding: 0 6px; }
 }
  
-/*  PANTALLA MOVIL */ 
-
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -666,13 +673,14 @@ body {
 @media (max-width: 768px) {
   .sidebar {
     display: none;
+    position: static;
+    height: auto;
+    overflow: visible;
   }
-
-  .mobile-header {
-    display: block;
+  .content {
+    margin-left: 0;
   }
 }
-
 
 /* === SKILLS === */
 .skills-grid {
