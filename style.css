@@ -4,9 +4,7 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: block;
   min-height: 100vh;
 }
 
@@ -106,8 +104,9 @@ body {
 
 /* -- Contenido principal (deja hueco a la sidebar fija) -- */
 .content {
-  margin-left: 260px;     /* espacio para la sidebar fija */
-  overflow-y: auto;       /* en vez de scroll */
+  margin-left: 260px;                 /* deja hueco a la sidebar fija */
+  width: calc(100% - 260px);          /* <- evita la franja blanca derecha */
+  overflow-y: auto;
   scroll-behavior: smooth;
   background-color: #ffffff;
   color: #111;
@@ -518,7 +517,6 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .project-card { flex-basis: 86%; }     /* ocupa casi toda la pantalla */
-  .scroll-btn { display: none; }         /* en móvil se navega deslizando */
   .portfolio-wrapper { padding: 0 6px; }
 }
  
@@ -527,11 +525,8 @@ body {
     flex-direction: column;
   }
 
-  .sidebar {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-  }
+  .mobile-header { display: block; }    /* muestra el header hamburguesa en móvil */
+  .content { margin-left: 0; width: 100%; }  /* que el contenido use todo el ancho */
 
   .nav {
     flex-direction: row;
