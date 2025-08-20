@@ -471,7 +471,7 @@ body {
   :root { --mh: 56px; } /* altura cabecera móvil */
 
   /* Offset para anclajes (#about, #education, etc.) */
-  .content { scroll-padding-top: var(--mh); }
+  html { scroll-padding-top: var(--mh); }
   .section { scroll-margin-top: 0; }
   
   /* ===== Barra superior ===== */
@@ -536,12 +536,8 @@ body {
   .content {
     margin-left: 0 !important;
     width: 100vw !important;
-    padding: 0px;
     padding-top: var(--mh);
     box-sizing: border-box;
-    margin-left: 0 !important;
-    width: 100vw !important;
-    padding: 0;                    
     box-sizing: border-box;
   }
   .section {
