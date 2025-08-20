@@ -468,15 +468,12 @@ body {
 **********************************************************/
 @media (max-width: 768px) {
 
-  :root { 
-    --mh: 56px; 
-    --anchor-gap: 16px;
-  } 
+  :root { --mh: 56px; } /* altura cabecera móvil */
 
-  /* Offset para anclajes (#about, #education, etc.) */
-  html { scroll-padding-top: var(--mh); }
-  .section { scroll-margin-top: 0; }
-  
+  /* Offset de anclaje: aplicar SOLO al contenedor que scrollea */
+  html, body { scroll-padding-top: 0; }
+  .content { scroll-padding-top: var(--mh); }
+
   /* ===== Barra superior ===== */
   .mobile-header {
     display: flex !important;
@@ -494,12 +491,12 @@ body {
   /* ===== Menú desplegable ===== */
   .mobile-menu {
     position: fixed;
-    top: calc(var(--mh) + 14px) !important; /* más separación respecto a la barra */
+    top: calc(var(--mh) + 14px) !important;
     left: 0; right: 0;
     opacity: 0; pointer-events: none; transform: translateY(-10px);
     transition: opacity .3s ease, transform .3s ease;
     background-color: #1f2937; color: #fff; z-index: 999;
-    padding: 24px 20px 20px;                /* + padding arriba para bajar el contenido */
+    padding: 24px 20px 20px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     box-shadow: 0 10px 22px rgba(0,0,0,.25);
@@ -515,25 +512,16 @@ body {
   .mobile-social {
     display: flex;
     justify-content: center;
-    gap: 12px;                  /* un poco más de espacio entre iconos */
-    margin: 16px 0 14px;        /* separa los iconos de la barra */
+    gap: 12px;
+    margin: 16px 0 14px;
   }
   .mobile-social a {
     display: inline-flex;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: #ffffff;        /* botón blanco */
-    align-items: center;
-    justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 8px; background: #fff;
+    align-items: center; justify-content: center;
   }
-  .mobile-social img {
-    width: 18px;
-    height: 18px;
-    display: block;
-    filter: brightness(0);      /* icono negro para buen contraste */
-    opacity: 0.95;
-  }
+  .mobile-social img { width: 18px; height: 18px; display: block; filter: brightness(0); opacity: .95; }
 
   /* ===== Contenido y secciones ===== */
   .content {
@@ -541,18 +529,18 @@ body {
     width: 100vw !important;
     padding-top: var(--mh);
     box-sizing: border-box;
-    box-sizing: border-box;
-    scroll-padding-top: calc(var(--mh) + var(--anchor-gap));
   }
+
   .section {
-    width: 100vw;                  
-    margin-left: calc(50% - 50vw); 
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    padding: 24px 16px;            
-    min-height: calc(100vh - var(--mh));
+    padding: 24px 16px;
+    /* usa solo svh para móviles y evita duplicar reglas */
     min-height: calc(100svh - var(--mh));
-    scroll-margin-top: calc(var(--mh) + var(--anchor-gap));
+    scroll-margin-top: 0; /* importante: no sumar offset extra */
   }
+
   .section h2 {
     padding-left: 6px;
     font-size: clamp(22px, 5.6vw, 28px);
@@ -561,7 +549,7 @@ body {
   }
 
   /* Portada */
-  .home-section { min-height: calc(100vh - var(--mh)); }
+  .home-section { min-height: calc(100svh - var(--mh)); }
   .overlay { padding: clamp(20px, 6vw, 36px); margin: 0 12px; border-radius: 12px; }
   .home-title { font-size: clamp(28px, 8vw, 40px); letter-spacing: 1px; }
   .home-subtitle { font-size: clamp(14px, 4.2vw, 18px); margin-top: 8px; }
