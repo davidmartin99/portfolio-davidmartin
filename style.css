@@ -349,6 +349,67 @@ body {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
 }
 
+/* ===== ESCRITORIO (≥769px): About como card centrada y Skills en cards ===== */
+@media (min-width: 769px) {
+  /* Card para ABOUT (solo cambia la caja, no la sección entera) */
+  #about.section {
+    /* un poco más de aire vertical que el .section base */
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+   #about .about-container {
+    text-align: left;              /* pasa de centrado a izquierda */
+    max-width: 900px;              /* un pelín más ancho */
+    margin: 0 auto;                /* centrada */
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 28px rgba(0,0,0,.06);
+    line-height: 1.8;
+    font-size: 17px;
+  }
+  /* Ajuste sutil del título de About */
+  #about.section h2 {
+    margin-bottom: 22px;
+    padding-left: 24px;            /* mantienes ese “pelín” corrido */
+  }
+
+  /* Skills en cards */
+  .skills-grid {
+    max-width: 1100px;
+    gap: 26px;                     /* más separación entre cards */
+    padding: 0 8px;                /* aire lateral */
+  }
+  .skills-block {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .skills-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.08);
+    border-color: #dbe2ea;
+  }
+  .skills-block h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #0f172a;
+    border-bottom: 1px solid #eef2f7;  /* separador sutil */
+    padding-bottom: 8px;
+  }
+  .chips { gap: 10px; }
+  .chip {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
 /* === MOBILE HAMBURGER HEADER (oculto en escritorio) === */
 .mobile-header {
   display: none;
@@ -401,66 +462,6 @@ body {
 .scroll-btn[hidden] { display: none !important; }
 
 
-/* ===== ESCRITORIO (≥769px): About como card centrada y Skills en cards ===== */
-@media (min-width: 769px) {
-  /* Card para ABOUT (solo cambia la caja, no la sección entera) */
-  .about-section {
-    /* un poco más de aire vertical que el .section base */
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-  .about-section .about-container {
-    text-align: left;              /* pasa de centrado a izquierda */
-    max-width: 900px;              /* un pelín más ancho */
-    margin: 0 auto;                /* centrada */
-    background: #fff;
-    padding: 32px 40px;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 12px 28px rgba(0,0,0,.06);
-    line-height: 1.8;
-    font-size: 17px;
-  }
-  /* Ajuste sutil del título de About */
-  #about.section h2 {
-    margin-bottom: 22px;
-    padding-left: 24px;            /* mantienes ese “pelín” corrido */
-  }
-
-  /* Skills en cards */
-  .skills-grid {
-    max-width: 1100px;
-    gap: 26px;                     /* más separación entre cards */
-    padding: 0 8px;                /* aire lateral */
-  }
-  .skills-block {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 18px 20px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.05);
-    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  }
-  .skills-block:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0,0,0,.08);
-    border-color: #dbe2ea;
-  }
-  .skills-block h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #0f172a;
-    border-bottom: 1px solid #eef2f7;  /* separador sutil */
-    padding-bottom: 8px;
-  }
-  .chips { gap: 10px; }
-  .chip {
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-}
  
 /**********************************************************
 = = = = = = = = = = =   M Ó V I L  (≤ 768px)   = = = = = = = = = =
