@@ -468,7 +468,10 @@ body {
 **********************************************************/
 @media (max-width: 768px) {
 
-  :root { --mh: 56px; } /* altura cabecera móvil */
+  :root { 
+    --mh: 56px; 
+    --anchor-gap: 16px;
+  } 
 
   /* Offset para anclajes (#about, #education, etc.) */
   html { scroll-padding-top: var(--mh); }
@@ -539,6 +542,7 @@ body {
     padding-top: var(--mh);
     box-sizing: border-box;
     box-sizing: border-box;
+    scroll-padding-top: calc(var(--mh) + var(--anchor-gap));
   }
   .section {
     width: 100vw;                  
@@ -547,6 +551,7 @@ body {
     padding: 24px 16px;            
     min-height: calc(100vh - var(--mh));
     min-height: calc(100svh - var(--mh));
+    scroll-margin-top: calc(var(--mh) + var(--anchor-gap));
   }
   .section h2 {
     padding-left: 6px;
